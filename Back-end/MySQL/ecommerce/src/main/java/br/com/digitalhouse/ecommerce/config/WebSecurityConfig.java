@@ -1,4 +1,3 @@
-//*
 //package br.com.digitalhouse.ecommerce.config;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@
 //    @Autowired
 //    private Environment env;
 //
-//    Liberação de todos os endpoints e requests para o spring security
+//    // Liberação de todos os endpoints e requests para o spring security
 //    public void configure(WebSecurity web) throws Exception {
 //        web.ignoring().antMatchers("/**");
 //    }
@@ -51,4 +50,4 @@
 //        return source;
 //    }
 //
-//}*/
+//}

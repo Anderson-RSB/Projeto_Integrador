@@ -1,3 +1,5 @@
+USE ecommerce;
+
 create table category (id integer not null auto_increment, name varchar(255), primary key (id)) engine=InnoDB;
 create table harmony (id integer not null auto_increment, image TEXT, nameplate varchar(255), primary key (id)) engine=InnoDB;
 create table product (id integer not null auto_increment, description TEXT, image TEXT, price double precision, title varchar(255), primary key (id)) engine=InnoDB;
