@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: br.com.digitalhouse.ecommerce.EcommerceApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.688 s - in br.com.digitalhouse.ecommerce.EcommerceApplicationTests

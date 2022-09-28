@@ -10,7 +10,6 @@ br\com\digitalhouse\ecommerce\controllers\CategoryController.class
 br\com\digitalhouse\ecommerce\services\ProductService.class
 br\com\digitalhouse\ecommerce\entities\Harmony.class
 br\com\digitalhouse\ecommerce\services\exceptions\EntityWineNotFoundException.class
-br\com\digitalhouse\ecommerce\config\WebSecurityConfig.class
 br\com\digitalhouse\ecommerce\services\CategoryService.class
 br\com\digitalhouse\ecommerce\controllers\exceptions\ManipulatorException.class
 br\com\digitalhouse\ecommerce\repositories\ProductRepository.class
