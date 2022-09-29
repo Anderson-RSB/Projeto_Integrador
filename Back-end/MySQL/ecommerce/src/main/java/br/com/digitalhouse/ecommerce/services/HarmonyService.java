@@ -1,7 +1,9 @@
 package br.com.digitalhouse.ecommerce.services;
 
 import br.com.digitalhouse.ecommerce.dtos.HarmonyDto;
+import br.com.digitalhouse.ecommerce.dtos.ProductDto;
 import br.com.digitalhouse.ecommerce.entities.Harmony;
+import br.com.digitalhouse.ecommerce.entities.Product;
 import br.com.digitalhouse.ecommerce.repositories.HarmonyRepository;
 import br.com.digitalhouse.ecommerce.repositories.ProductRepository;
 import br.com.digitalhouse.ecommerce.services.exceptions.DatabaseWineException;
@@ -22,6 +24,9 @@ public class HarmonyService {
 
     @Autowired
     private HarmonyRepository harmonyRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     // Search All
     @Transactional(readOnly = true)
@@ -77,7 +82,6 @@ public class HarmonyService {
             throw new EntityWineNotFoundException(
                     "Exclusão não possível não realizada!" +
                             id + "Não encontrado!"
-
             );
         }
         catch (DataIntegrityViolationException e){
@@ -92,6 +96,12 @@ public class HarmonyService {
     private void copyDtoForEntity(HarmonyDto dto, Harmony entity) {
         entity.setNameplate(dto.getNameplate());
         entity.setImage(dto.getImage());
+
+        entity.getProducts().clear();
+        for (ProductDto productDto : dto.getProducts()) {
+            Product product = productRepository.getReferenceById(productDto.getId());
+            entity.getProducts().add(product);
+        }
     }
 
 }

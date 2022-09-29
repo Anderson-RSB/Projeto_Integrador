@@ -21,7 +21,7 @@ public class ProductDto implements Serializable {
 
     private Set<CategoryDto> categories = new HashSet<>();
 
-    private Set<HarmonyDto> harmonies = new HashSet<>();
+//    private Set<HarmonyDto> harmonies = new HashSet<>();
 
     public ProductDto() {
     }
@@ -40,7 +40,7 @@ public class ProductDto implements Serializable {
         image = product.getImage();
         price = product.getPrice();
         product.getCategories().forEach(categories -> this.categories.add(new CategoryDto(categories)));
-        product.getHarmonies().forEach(harmonies -> this.harmonies.add(new HarmonyDto(harmonies)));
+//        product.getHarmonies().forEach(harmonies -> this.harmonies.add(new HarmonyDto(harmonies)));
     }
 
     public Integer getId() {
@@ -87,8 +87,8 @@ public class ProductDto implements Serializable {
         return categories;
     }
 
-    public Set<HarmonyDto> getHarmonies() {
-        return harmonies;
-    }
+//    public Set<HarmonyDto> getHarmonies() {
+//        return harmonies;
+//    }
 
 }

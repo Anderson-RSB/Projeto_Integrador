@@ -26,11 +26,11 @@ public class Product implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "id_category"))
     Set<Category> categories = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "product_harmony",
-            joinColumns = @JoinColumn(name = "id_product"),
-            inverseJoinColumns = @JoinColumn(name = "id_harmony"))
-    Set<Harmony> harmonies = new HashSet<>();
+//    @ManyToMany
+//    @JoinTable(name = "product_harmony",
+//            joinColumns = @JoinColumn(name = "id_product"),
+//            inverseJoinColumns = @JoinColumn(name = "id_harmony"))
+//    Set<Harmony> harmonies = new HashSet<>();
 
     public Product() {
     }
@@ -94,8 +94,8 @@ public class Product implements Serializable {
         return categories;
     }
 
-    public Set<Harmony> getHarmonies() {
-        return harmonies;
-    }
+//    public Set<Harmony> getHarmonies() {
+//        return harmonies;
+//    }
 
 }

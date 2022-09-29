@@ -3,6 +3,8 @@ package br.com.digitalhouse.ecommerce.dtos;
 import br.com.digitalhouse.ecommerce.entities.Harmony;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class HarmonyDto implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -11,7 +13,7 @@ public class HarmonyDto implements Serializable {
     private String nameplate;
     private String image;
 
-//    private Set<ProductDto> products = new HashSet<>();
+    private Set<ProductDto> products = new HashSet<>();
 
     public HarmonyDto() {
     }
@@ -26,7 +28,7 @@ public class HarmonyDto implements Serializable {
         this.id = harmony.getId();
         this.nameplate = harmony.getNameplate();
         this.image = harmony.getImage();
-//        harmony.getProducts().forEach(prod -> this.products.add(new ProductDto(prod)));
+        harmony.getProducts().forEach(prod -> this.products.add(new ProductDto(prod)));
     }
 
     public Integer getId() {
@@ -53,4 +55,7 @@ public class HarmonyDto implements Serializable {
         this.image = image;
     }
 
+    public Set<ProductDto> getProducts() {
+        return products;
+    }
 }

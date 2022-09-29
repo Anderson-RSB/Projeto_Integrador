@@ -2,6 +2,8 @@ package br.com.digitalhouse.ecommerce.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -14,6 +16,12 @@ public class Harmony implements Serializable {
     private String nameplate;
     @Column(columnDefinition = "TEXT")
     private String image;
+
+    @ManyToMany
+    @JoinTable(name = "harmony_product",
+        joinColumns = @JoinColumn(name = "id_harmony"),
+        inverseJoinColumns = @JoinColumn(name = "id_product"))
+    Set<Product> products = new HashSet<>();
 
     // Construtor padrão
     public Harmony() {
@@ -50,4 +58,7 @@ public class Harmony implements Serializable {
         this.image = image;
     }
 
+    public Set<Product> getProducts() {
+        return products;
+    }
 }

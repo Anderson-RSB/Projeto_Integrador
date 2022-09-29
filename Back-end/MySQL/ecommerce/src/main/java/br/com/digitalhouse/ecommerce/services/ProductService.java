@@ -31,9 +31,6 @@ public class ProductService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @Autowired
-    private HarmonyRepository harmonyRepository;
-
     @Transactional(readOnly = true)
     public List<ProductDto> searchAll() {
         try{
@@ -108,11 +105,11 @@ public class ProductService {
             entity.getCategories().add(category);
         }
 
-        entity.getHarmonies().clear();
-        for (HarmonyDto harmonyDto : dto.getHarmonies()) {
-            Harmony harmony = harmonyRepository.getReferenceById(harmonyDto.getId());
-            entity.getHarmonies().add(harmony);
-        }
+//        entity.getHarmonies().clear();
+//        for (HarmonyDto harmonyDto : dto.getHarmonies()) {
+//            Harmony harmony = harmonyRepository.getReferenceById(harmonyDto.getId());
+//            entity.getHarmonies().add(harmony);
+//        }
 
     }
 
