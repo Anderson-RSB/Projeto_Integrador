@@ -3,9 +3,9 @@ spring:
     activate:
       on-profile: docker
   datasource:
-    url: jdbc:mysql://mysql_server_ecommerce:3306/ecommerce
+    url: jdbc:mysql://mysql_server_ecommerce2:3306/ecommerce
 #    A URL acima contém o nome do container em que o BD se encontra (mysql_server_ecommerce)
-    username: root
+    username: admin
     password: 98164
     initialize: false
     initialSize: 0
